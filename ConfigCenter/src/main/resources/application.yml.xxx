@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:./ConfigCenter/config/
+server:
+  port: 10083
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10080/eureka/
+    eureka-server-u-r-l-context: http://localhost:10080/eureka
+  instance:
+    prefer-ip-address: true
